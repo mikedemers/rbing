@@ -132,8 +132,8 @@ private
     QUERY_KEYWORDS.each do |kw|
       next unless options[kw]
       if options[kw].is_a? Array
-        kw_query = options[kw].map {|s| "#{s}".strip }.join(" OR ")
-        queries << " (#{kw}:#{kw_query})"
+        kw_query = options[kw].map {|s| "#{kw}:#{s}".strip }.join(" OR ")
+        queries << " (#{kw_query})"
       else
         queries << " #{kw}:#{options[kw]}"
       end
