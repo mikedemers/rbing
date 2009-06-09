@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+
+require 'pp'
+require 'rubygems'
+require 'rbing'
+
+bing = RBing.new
+
+if query = ARGV[1]
+  source = ARGV[0]
+elsif query = ARGV[0]
+  source = "web"
+else
+  STDERR.puts "Usage: #{$0} [source] query"
+  STDERR.puts ""
+  STDERR.puts "Also, don't forget to put your App Id in $HOME/.rbing_app_id"
+  STDERR.puts ""
+  STDERR.puts "If you don't have an App Id, get one here: http://www.bing.com/developers"
+  STDERR.puts ""
+  exit
+end
+
+rsp = bing.search(source, query)
+
+begin
+  pp rsp.send(source).results
+rescue
+  pp rsp
+end

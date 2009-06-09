@@ -1,0 +1,92 @@
+
+== RBing
+
+A gem that provides an interface to Microsoft's Bing search API.
+
+
+== Usage
+
+Get a App ID at: <http://www.bing.com/developers/createapp.aspx>
+
+  require 'rubygems'
+  require 'rbing'
+  bing = RBing.new("YOURAPPID")
+  
+  rsp = bing.web("ruby")
+  puts rsp.web.results[0].title
+  => "Ruby (programming language) - Wikipedia, the free encyclopedia"
+  
+  rsp = bing.web("ruby", :site => "github.com")
+  puts rsp.web.results[0].url
+  => "http://github.com/vim-ruby/vim-ruby/tree/master"
+  
+  rsp = bing.web("ruby", :site => ["github.com", "rubyforge.org"])
+  puts rsp.web.results[0].url
+  => "http://rubyforge.org/"
+  
+  rsp = bing.news("search engines")
+  puts rsp.web.results[0].title
+  => "Microsoft Bing more popular than Yahoo"
+  
+  rsp = bing.spell("coincidance")
+  puts rsp.spell.results[0].value
+  => "coincidence"
+  
+  rsp = bing.instant_answer("How many rods in a furlong?")
+  puts rsp.instant_answer.results[0].instant_answer_specific_data.encarta.value
+  => "1 furlong = 40 rods"
+
+
+== Command Line Utility
+
+RBing also has a simple command line interface.
+
+Put your App Id into $HOME/.rbing_app_id and you can use rbing:
+
+  $> rbing "ruby gems"
+  [{"Url"=>"http://rubygems.org/",
+    "Title"=>"RubyGems Manuals",
+    "CacheUrl"=>
+     "http://cc.bingj.com/cache.aspx?q=ruby+gems&d=76167709461212&w=39b024d8,55a87382",
+    "DisplayUrl"=>"rubygems.org",
+    "DateTime"=>Wed Jun 03 11:25:29 UTC 2009,
+    "Description"=>
+     "The Gem::Specification object controls the data..."},
+   ...
+  ]
+
+The default source is "web" but you can specify another:
+
+  $> rbing news "revolutionary technology"
+  [{"BreakingNews"=>0,
+    "Url"=>
+     "http://www.tmcnet.com/usubmit/-bt-successfully-completes-exchange-exchange-cisco-telepresence-call-/2009/06/04/4211245.htm",
+    "Source"=>"TMCnet",
+    "Title"=>
+     "BT Successfully Completes Exchange to Exchange Cisco TelePresence Call ... ",
+    "Snippet"=>
+     "BT Successfully Completes Exchange to Exchange Cisco TelePresence Call; Revolutionary...",
+    "Date"=>Thu Jun 04 13:33:09 UTC 2009},
+   ...
+  ]
+
+
+== Dependencies
+
+ * HTTParty: <http://httparty.rubyforge.org/>
+
+
+== Resources
+
+RBing:
+
+ * Source Code: <http://github.com/mikedemers/rbing/tree>
+ * Support: <http://github.com/mikedemers/rbing/issues>
+
+Bing:
+
+ * Bing API: <http://www.bing.com/developers>
+ * Register for App Id: <http://www.bing.com/developers/createapp.aspx>
+ * Bing API Reference: <http://msdn.microsoft.com/en-us/library/dd251056.aspx>
+ * Query Keywords: <http://help.live.com/help.aspx?project=wl_searchv1&market=en-US&querytype=keyword&query=redliub&tmt=&domain=www.bing.com:80>
+
