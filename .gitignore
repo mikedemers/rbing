@@ -1,6 +1,6 @@
 .DS_Store
-doc/
-tmp/
-log/
-pkg/
+doc/*
+tmp/*
+log/*
+pkg/*
 *.swp
