@@ -73,20 +73,20 @@ The default source is "web" but you can specify another:
 
 == Dependencies
 
- * HTTParty: <http://httparty.rubyforge.org/>
+- HTTParty: http://httparty.rubyforge.org/
 
 
 == Resources
 
 RBing:
 
- * Source Code: <http://github.com/mikedemers/rbing/tree>
- * Support: <http://github.com/mikedemers/rbing/issues>
+- Source Code: http://github.com/mikedemers/rbing/tree
+- Support: http://github.com/mikedemers/rbing/issues
 
 Bing:
 
- * Bing API: <http://www.bing.com/developers>
- * Register for App Id: <http://www.bing.com/developers/createapp.aspx>
- * Bing API Reference: <http://msdn.microsoft.com/en-us/library/dd251056.aspx>
- * Query Keywords: <http://help.live.com/help.aspx?project=wl_searchv1&market=en-US&querytype=keyword&query=redliub&tmt=&domain=www.bing.com:80>
+- Bing API: http://www.bing.com/developers
+- Register for App Id: http://www.bing.com/developers/createapp.aspx
+- Bing API Reference: http://msdn.microsoft.com/en-us/library/dd251056.aspx
+- Query Keywords: http://help.live.com/help.aspx?project=wl_searchv1&market=en-US&querytype=keyword&query=redliub&tmt=&domain=www.bing.com:80
 
