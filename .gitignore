@@ -3,4 +3,5 @@ doc/*
 tmp/*
 log/*
 pkg/*
+rbing/*
 *.swp
