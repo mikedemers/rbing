@@ -25,7 +25,7 @@ Get a App ID at: <http://www.bing.com/developers/createapp.aspx>
   => "http://rubyforge.org/"
   
   rsp = bing.news("search engines")
-  puts rsp.web.results[0].title
+  puts rsp.news.results[0].title
   => "Microsoft Bing more popular than Yahoo"
   
   rsp = bing.spell("coincidance")
