@@ -5,7 +5,7 @@ require 'date'
 require 'spec/rake/spectask'
 
 GEM = "rbing"
-GEM_VERSION = "1.0.1"
+GEM_VERSION = "1.1.0"
 AUTHOR = "Mike Demers"
 EMAIL = "mike@9astronauts.com"
 HOMEPAGE = "http://9astronauts.com/code/ruby/rbing"
